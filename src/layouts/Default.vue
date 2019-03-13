@@ -1,0 +1,89 @@
+<template>
+  <div class="layout d-flex flex-column h-100" style="padding-top: 56px;">
+    <header class="header">
+      <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow">
+        <div class="container">
+          <a class="navbar-brand text-primary" @click="goTo('home')">{{ $static.metaData.siteName }}</a>
+
+          <button class="navbar-toggler btn btn-sm" type="button" @click="toggleCollapse()">
+            <app-fa v-if="!this.isMenuCollapsed" icon="bars"/>
+            <app-fa v-if="this.isMenuCollapsed" icon="times"/>
+          </button>
+          <div
+            :class="{ 'show': isMenuCollapsed }"
+            class="collapse navbar-collapse mt-2 mt-md-0 justify-content-end"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <g-link class="nav-link" to="/" exact>Home</g-link>
+              </li>
+              <li class="nav-item">
+                <g-link class="nav-link" to="/datenschutz" exact>Datenschutz</g-link>
+              </li>
+              <li class="nav-item">
+                <g-link class="nav-link" to="/impressum" exact>Impressum</g-link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <transition name="expand" appear>
+      <main class="bg-light">
+        <slot/>
+      </main>
+    </transition>
+
+    <footer>
+      <div class="bg-dark text-center p-2">
+        <span class="text-light">©2019 {{ $static.metaData.siteName }}</span>
+        &nbsp;
+        <g-link class="nav-item" to="/datenschutz" exact>Datenschutz</g-link>&nbsp;
+        <g-link class="nav-item" to="/impressum" exact>Impressum</g-link>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<static-query>
+query {
+	metaData {
+		siteName
+	}
+}
+</static-query>
+
+<script>
+export default {
+  data: () => {
+    return {
+      isMenuCollapsed: false
+    };
+  },
+  methods: {
+    toggleCollapse() {
+      this.isMenuCollapsed = !this.isMenuCollapsed;
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+$enable-shadows: true;
+@import "~bootstrap/scss/bootstrap";
+
+html, body {
+	height: 100%;
+}
+
+.expand-enter-active,
+.expand-leave-active {
+  transition: opacity 1s;
+}
+
+.expand-enter,
+.expand-leave-to {
+  opacity: 0;
+}
+</style>
