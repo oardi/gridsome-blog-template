@@ -1,23 +1,32 @@
-# gridsome basics
+# Gridsome
+Static Site Generator
 
-## enabled scss
-install dependencies
+
+# SCSS aktivieren
+Abhängigkeiten installieren
+
 `npm install -D sass-loader node-sass`
 
-Change style lang to scss
+Lang SCSS im Layout anpassen:
 ```js
 <style lang="scss">
 	@import "~bootstrap/scss/bootstrap";
 </style>
 ```
 
-## Create a Blog
 
-### Install the following Plugins
+
+# Blog erstellen
+
+
+## Benötigte Plugins installieren
+Dafür muss folgender Befehl ausgeführt werden:
 
 `npm install @gridsome/source-filesystem @gridsome/transformer-remark`
 
-### Change gridsome.config.js
+
+## Gridsome Config anpassen
+
 ```js
 module.exports = {
 	siteName: 'My Static Site',
@@ -45,9 +54,12 @@ module.exports = {
 }
 ```
 
-### create "blog" folder on root
-* create blog folder
-* creat a .md File
+
+## Blog Ordner erstellen
+Im Root-Verzeichnis einen Ordner "blog" erstellen.
+Innerhalb des Verzeichnis einen Unterordner "posts" erstellen.
+Innerhalb diesen Ordners können nun Blog-Posts als .md Dateien abgelegt werden.
+
 
 ```
 ---
@@ -65,3 +77,43 @@ Content lorem ipsum **haha**
 	const foo = 'bar';
 \```
 ```
+
+
+## Gridsome Config Tags hinzufügen
+
+Damit Tags hinzugefügt werden können, muss innerhalb der Plugins die Konfiguration erweitert werden.
+Unter dem **path** kann nun das Verzeichnis für Tags erstellt werden.
+
+```js
+{
+	use: '@gridsome/source-filesystem',
+	options: {
+		path: 'blog/tags/*.md',
+		typeName: 'Tag',
+		route: '/tag/:id'
+	}
+}
+```
+
+
+## Gridsome Config Post anpassen
+Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Collection der Typename zugefügt: tags: 'Tag'
+
+```js
+	refs: {
+		tags: 'Tag'
+	},
+```
+
+## Tag in einem Post zuweisen
+Im Header einer Post .md Datei kann nun die Collection **tags** mit einer Liste von Tag-Ids versehen werden.
+
+```
+tags:
+  - vue
+```
+
+
+
+// https://gridsome.org/docs/taxonomies/#creating-a-taxonomy-page
+// https://github.com/gridsome/gridsome/issues/188
