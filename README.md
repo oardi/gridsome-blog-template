@@ -79,7 +79,7 @@ Content lorem ipsum **haha**
 ```
 
 
-## Gridsome Config Tags hinzufügen
+# Gridsome Config Tags hinzufügen
 
 Damit Tags hinzugefügt werden können, muss innerhalb der Plugins die Konfiguration erweitert werden.
 Unter dem **path** kann nun das Verzeichnis für Tags erstellt werden.
@@ -100,12 +100,12 @@ Unter dem **path** kann nun das Verzeichnis für Tags erstellt werden.
 Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Collection der Typename zugefügt: tags: 'Tag'
 
 ```js
-	refs: {
-		tags: 'Tag'
-	},
+refs: {
+	tags: 'Tag'
+},
 ```
 
-## Tag in einem Post zuweisen
+## Tag einem Post zuweisen
 Im Header einer Post .md Datei kann nun die Collection **tags** mit einer Liste von Tag-Ids versehen werden.
 
 ```
@@ -115,5 +115,55 @@ tags:
 
 
 
-// https://gridsome.org/docs/taxonomies/#creating-a-taxonomy-page
-// https://github.com/gridsome/gridsome/issues/188
+# Category einem Post zuweisen
+
+## Gridsome Config Post anpassen
+Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Typename zugefügt: category: 'Category'
+
+Post
+```js
+refs: {
+	category: 'Category',
+},
+```
+
+Plugins
+```js
+{
+	use: '@gridsome/source-filesystem',
+	options: {
+		path: 'blog/categories/*.md',
+		typeName: 'Category',
+		route: '/category/:id'
+	}
+},
+```
+
+
+# Author einem Post zuweisen
+
+## Gridsome Config Post anpassen
+Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Typename zugefügt: author: 'Author'
+
+Post
+```js
+refs: {
+	author: 'Author'
+},
+```
+
+Plugins
+```js
+{
+	use: '@gridsome/source-filesystem',
+	options: {
+		path: 'blog/authors/*.md',
+		typeName: 'Author',
+		route: '/author/:id'
+	}
+}
+```
+
+
+<!-- https://gridsome.org/docs/taxonomies/#creating-a-taxonomy-page --> 
+<!-- https://github.com/gridsome/gridsome/issues/188 -->
