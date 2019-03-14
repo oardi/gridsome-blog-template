@@ -51,5 +51,5 @@ module.exports = {
 		}
 	],
 
-	pathPrefix: '/gridsome-blog'
+	// pathPrefix: '/gridsome-blog'
 }
