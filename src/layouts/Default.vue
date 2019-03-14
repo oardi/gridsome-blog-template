@@ -3,7 +3,7 @@
     <header class="header">
       <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow">
         <div class="container">
-          <a class="navbar-brand text-primary" @click="goTo('home')">{{ $static.metaData.siteName }}</a>
+          <g-link class="navbar-brand text-primary" to="/" exact>{{ $static.metaData.siteName }}</g-link>
 
           <button class="navbar-toggler btn btn-sm" type="button" @click="toggleCollapse()">
             <app-fa v-if="!this.isMenuCollapsed" icon="bars"/>
@@ -35,7 +35,7 @@
       </main>
     </transition>
 
-    <footer>
+    <footer class="mt-auto">
       <div class="bg-dark text-center p-2">
         <span class="text-light">©2019 {{ $static.metaData.siteName }}</span>
         &nbsp;
@@ -73,8 +73,15 @@ export default {
 $enable-shadows: true;
 @import "~bootstrap/scss/bootstrap";
 
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
+}
+
+#banner {
+  background: url(../../static/banner.jpg)
+    center center;
+  background-size: cover;
 }
 
 .expand-enter-active,

@@ -18,7 +18,9 @@ module.exports = {
 				typeName: 'Post',
 				route: '/:slug',
 				refs: {
-					tags: 'Tag'
+					tags: 'Tag',
+					category: 'Category',
+					author: 'Author'
 				},
 				remark: {}
 			}
@@ -30,8 +32,24 @@ module.exports = {
 				typeName: 'Tag',
 				route: '/tag/:id'
 			}
+		},
+		{
+			use: '@gridsome/source-filesystem',
+			options: {
+				path: 'blog/categories/*.md',
+				typeName: 'Category',
+				route: '/category/:id'
+			}
+		},
+		{
+			use: '@gridsome/source-filesystem',
+			options: {
+				path: 'blog/authors/*.md',
+				typeName: 'Author',
+				route: '/author/:id'
+			}
 		}
 	],
 
-	pathPrefix: '/gridsome'
+	pathPrefix: '/gridsome-blog'
 }
