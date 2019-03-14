@@ -14,8 +14,14 @@
 			</div>
 		</div>
 
-		<div class="container pt-3 pb-4">
-			<h2>Einträge</h2>
+		<div class="container pt-4 pb-4">
+			<div class="card shadow-sm">
+				<div class="card-body">
+					{{ $page.metaData.siteDescription }}
+				</div>
+			</div>
+
+			<h2 class="mt-4">Einträge</h2>
 			<div
 				class="card shadow-sm mt-4"
 				v-for="post of posts"
@@ -23,9 +29,7 @@
 			>
 				<div class="card-body">
 					<div class="card-title">
-						<div>
-							{{ post.category.title }} - {{ post.title }}
-						</div>
+						<div>{{ post.category.title }} - {{ post.title }}</div>
 						<small class="text-muted">{{ post.date }}</small>
 					</div>
 					<div class="card-text">
@@ -64,8 +68,8 @@
     						path: e.node.path,
     						date: e.node.date,
     						excerpt: e.node.excerpt,
-							tags: e.node.tags,
-							category: e.node.category
+    						tags: e.node.tags,
+    						category: e.node.category
     				  }))
     				: [];
     		}
@@ -102,5 +106,12 @@
 			}
 		}
   	}
+
+	metaData {
+		siteName
+		siteDescription
+	}
 }
+
+
 </page-query>
