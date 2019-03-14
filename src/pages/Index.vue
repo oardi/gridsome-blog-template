@@ -1,61 +1,65 @@
 <template>
 	<Layout>
-		<div
-			id="banner"
-			class="bg-light mb-0 d-flex align-items-center justify-content-center"
-			style="min-height: 380px;"
-		>
-			<div class="text-center">
-				<div class="mt-3">
-					<button class="btn btn-primary shadow">
-						Custom Action
-					</button>
-				</div>
-			</div>
-		</div>
-
 		<div class="container pt-4 pb-4">
-			<div class="card shadow-sm">
-				<div class="card-body">
-					<div class="card-title">
-						Willkommen auf {{ $page.metaData.siteName }}
-					</div>
-					{{ $page.metaData.siteDescription }}
-				</div>
-			</div>
-
-			<h2 class="mt-4">Einträge</h2>
 			<div
-				class="card shadow-sm mt-4"
-				v-for="post of posts"
-				:key="post.id"
+				class="d-flex align-items-center justify-content-center"
+				style="height: 380px;"
 			>
-				<div class="card-body">
-					<div class="card-title">
-						<div>{{ post.category.title }} - {{ post.title }}</div>
-						<small class="text-muted">{{ post.date }}</small>
+				<div
+					class="d-flex flex-column align-items-center justify-items-center pt-4 pb-4"
+				>
+					<div>
+						<g-image
+							width="180"
+							src="../../static/author.png"
+							class="rounded-circle"
+						/>
 					</div>
-					<div class="card-text">
-						<p>{{ post.excerpt }}</p>
-					</div>
-
-					<div class="mt-2">
-						<g-link
-							v-for="tag of post.tags"
-							:key="tag.id"
-							class="btn btn-secondary btn-sm shadow-sm"
-							:to="tag.path"
-							exact
-						>
-							#{{ tag.title }}
-						</g-link>
+					<h1 class="display-4">{{ $page.metaData.siteName }}</h1>
+					<p>{{ $page.metaData.siteDescription }}</p>
+					<div class="text-center">
+						<button class="btn btn-primary shadow">
+							Custom Action
+						</button>
 					</div>
 				</div>
 			</div>
 
-			<div class="card mt-4">
+			<div class="posts">
+				<g-link v-for="post of posts" :key="post.id" :to="post.path">
+					<div class="card shadow mt-4">
+						<div class="card-body">
+							<h5 class="card-title">
+								<div>
+									{{ post.category.title }} - {{ post.title }}
+								</div>
+								<small class="text-muted">{{
+									post.date
+								}}</small>
+							</h5>
+							<div class="card-text">
+								<p>{{ post.excerpt }}</p>
+							</div>
+
+							<div class="mt-2">
+								<g-link
+									v-for="tag of post.tags"
+									:key="tag.id"
+									class="btn btn-secondary btn-sm shadow-sm"
+									:to="tag.path"
+									exact
+								>
+									#{{ tag.title }}
+								</g-link>
+							</div>
+						</div>
+					</div>
+				</g-link>
+			</div>
+
+			<!-- <div class="card shadow mt-4">
 				<div class="card-body">
-					<div class="card-title">Categories</div>
+					<h5 class="card-title">Categories</h5>
 					<button
 						class="btn btn-sm btn-secondary mr-2"
 						v-for="category of categories"
@@ -66,9 +70,9 @@
 				</div>
 			</div>
 
-			<div class="card mt-4">
+			<div class="card shadow mt-4">
 				<div class="card-body">
-					<div class="card-title">Tags</div>
+					<h5 class="card-title">Tags</h5>
 					<button
 						class="btn btn-sm btn-secondary mr-2"
 						v-for="tag of tags"
@@ -77,7 +81,7 @@
 						#{{ tag.title }}
 					</button>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</Layout>
 </template>
@@ -127,6 +131,14 @@
     	}
     }
 </script>
+
+<style>
+    .posts .card:hover {
+    	/* -webkit-transform: translateY(-5px);
+                                    	transform: translateY(-5px); */
+    	cursor: pointer;
+    }
+</style>
 
 <page-query>
 {

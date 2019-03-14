@@ -8,8 +8,6 @@ tags:
   - vue
 ---
 
-# Blog Post One
-
 Content lorem ipsum **haha**
 
 *italic*

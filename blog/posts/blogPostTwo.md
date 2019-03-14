@@ -6,7 +6,6 @@ excerpt: some short description about blaaaa
 author: ardian-shala
 ---
 
-# Blog Post Two
 
 Content lorem ipsum **haha**
 
