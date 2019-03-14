@@ -167,3 +167,8 @@ Plugins
 
 <!-- https://gridsome.org/docs/taxonomies/#creating-a-taxonomy-page --> 
 <!-- https://github.com/gridsome/gridsome/issues/188 -->
+
+
+# TODO
+
+Components um Teile zu extrahieren

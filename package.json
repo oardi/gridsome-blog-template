@@ -1,5 +1,5 @@
 {
-	"name": "my-static-site",
+	"name": "gridsome-blog-template",
 	"private": true,
 	"scripts": {
 		"build": "gridsome build",
