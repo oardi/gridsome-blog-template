@@ -37,7 +37,7 @@
 
     <footer class="mt-auto">
       <div class="bg-dark text-center p-2">
-        <span class="text-light">©2019 {{ $static.metaData.siteName }}</span>
+        <span class="text-light">©{{ new Date().getFullYear() }} - {{ $static.metaData.siteName }}</span>
         &nbsp;
         <g-link class="nav-item" to="/datenschutz" exact>Datenschutz</g-link>&nbsp;
         <g-link class="nav-item" to="/impressum" exact>Impressum</g-link>

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{218:function(e){e.exports={data:{tag:{title:"Vue",belongsTo:{edges:[{node:{id:"6f1ffdd1cea552935840b8c146fef26c",title:"Blog Post One",path:"/blog-post-one"}}]}}}}}}]);
