@@ -17,6 +17,9 @@
 		<div class="container pt-4 pb-4">
 			<div class="card shadow-sm">
 				<div class="card-body">
+					<div class="card-title">
+						Willkommen auf {{ $page.metaData.siteName }}
+					</div>
 					{{ $page.metaData.siteDescription }}
 				</div>
 			</div>
@@ -49,32 +52,80 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<div class="card-title">Categories</div>
+					<button
+						class="btn btn-sm btn-secondary mr-2"
+						v-for="category of categories"
+						:key="category.id"
+					>
+						{{ category.title }}
+					</button>
+				</div>
+			</div>
+
+			<div class="card mt-4">
+				<div class="card-body">
+					<div class="card-title">Tags</div>
+					<button
+						class="btn btn-sm btn-secondary mr-2"
+						v-for="tag of tags"
+						:key="tag.id"
+					>
+						#{{ tag.title }}
+					</button>
+				</div>
+			</div>
 		</div>
 	</Layout>
 </template>
 
 <script>
     export default {
-    	metaInfo: {
-    		title: 'Home'
-    	},
-    	mounted() {},
     	computed: {
     		posts: function() {
     			return this.$page
-    				? this.$page.allPost.edges.map(e => ({
-    						id: e.node.id,
-    						title: e.node.title,
-    						path: e.node.path,
-    						date: e.node.date,
-    						excerpt: e.node.excerpt,
-    						tags: e.node.tags,
-    						category: e.node.category
-    				  }))
+    				? this.$page.allPost.edges.map(e => new PostModel(e.node))
+    				: [];
+    		},
+    		tags: function() {
+    			return this.$page
+    				? this.$page.allTag.edges.map(e => new TagModel(e.node))
+    				: [];
+    		},
+    		categories: function() {
+    			return this.$page
+    				? this.$page.allCategory.edges.map(
+    						e => new CategoryModel(e.node)
+    				  )
     				: [];
     		}
     	}
     };
+
+    class PostModel {
+    	constructor(dto) {
+    		return { ...dto };
+    	}
+
+    	id;
+    	title;
+    	path;
+    }
+
+    class TagModel {
+    	constructor(dto) {
+    		return { ...dto };
+    	}
+    }
+
+    class CategoryModel {
+    	constructor(dto) {
+    		return { ...dto };
+    	}
+    }
 </script>
 
 <page-query>
@@ -82,8 +133,8 @@
   	allPost {
 		totalCount
 		pageInfo {
-		totalPages
-		currentPage
+			totalPages
+			currentPage
 		}
 		edges {
 			node {
@@ -94,7 +145,6 @@
 				date (format:"DD.MM.YYYY")
 				tags {
 					title
-					slug
 					path
 				}
 				author {
@@ -110,6 +160,23 @@
 	metaData {
 		siteName
 		siteDescription
+	}
+
+	allTag{
+		edges {
+			node {
+				title
+				path
+			}
+		}
+	}
+	allCategory {
+		edges{
+			node {
+				title
+				path
+			}
+		}
 	}
 }
 
