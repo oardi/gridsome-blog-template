@@ -40,6 +40,9 @@
 
     export default {
     	components: { PostCard },
+    	metaInfo: {
+    		title: 'Home'
+    	},
     	computed: {
     		posts: function() {
     			return this.$page

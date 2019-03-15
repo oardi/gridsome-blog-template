@@ -29,6 +29,17 @@
     		post: function() {
     			return this.$page.post;
     		}
+    	},
+    	metaInfo() {
+    		return {
+    			title: this.post.title,
+    			meta: [
+    				{
+    					name: 'description',
+    					content: this.post.excerpt
+    				}
+    			]
+    		};
     	}
     };
 </script>

@@ -185,3 +185,21 @@ siteUrl: 'gridsome.muchadev.com',
 
 ## builden
 ...
+
+
+# Meta Data
+
+## Post Meta Data
+```js
+metaInfo() {
+	return {
+		title: this.post.title,
+		meta: [
+			{
+				name: 'description',
+				content: this.post.excerpt
+			}
+		]
+	};
+}
+```
