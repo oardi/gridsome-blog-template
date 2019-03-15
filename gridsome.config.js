@@ -1,6 +1,7 @@
 module.exports = {
 	siteName: 'MyStaticSite',
 	siteDescription: 'This is a website build with gridsome - a static site generator',
+	siteUrl: 'gridsome.muchadev.com',
 
 	transformers: {
 		remark: {
@@ -51,6 +52,9 @@ module.exports = {
 				typeName: 'Author',
 				route: '/author/:id'
 			}
+		},
+		{
+			use: '@gridsome/plugin-sitemap'
 		}
 	]
 }

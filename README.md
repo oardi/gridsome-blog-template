@@ -172,3 +172,16 @@ Plugins
 # TODO
 
 Components um Teile zu extrahieren
+
+
+
+# Sitemap
+
+## Plugin installieren
+`npm install @gridsome/plugin-sitemap`
+
+## siteUrl setzen 
+siteUrl: 'gridsome.muchadev.com',
+
+## builden
+...
