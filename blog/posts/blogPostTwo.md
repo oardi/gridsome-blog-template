@@ -13,5 +13,5 @@ Content lorem ipsum **haha**
 
 
 ```js
-	const foo = 'bar';
+const foo = 'bar';
 ```
