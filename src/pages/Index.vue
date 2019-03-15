@@ -1,6 +1,7 @@
 <template>
 	<Layout>
 		<div class="container pt-4 pb-4">
+			<!-- TODO - AUTHOR -->
 			<div
 				class="d-flex align-items-center justify-content-center"
 				style="height: 380px;"
@@ -25,6 +26,7 @@
 				</div>
 			</div>
 
+			<!-- TODO- Pagination? -->
 			<div class="posts">
 				<PostCard v-for="post of posts" :key="post.id" :post="post" />
 			</div>
@@ -33,11 +35,11 @@
 </template>
 
 <script>
-	import { PostModel } from '../models/post.model';
-	import PostCard from '../components/PostCard';
+    import { PostModel } from '../models/post.model';
+    import PostCard from '../components/PostCard';
 
     export default {
-		components: { PostCard },
+    	components: { PostCard },
     	computed: {
     		posts: function() {
     			return this.$page
@@ -47,10 +49,6 @@
     	}
     };
 </script>
-
-<style>
-
-</style>
 
 <page-query>
 {

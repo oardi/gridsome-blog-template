@@ -1,24 +1,22 @@
 <template>
 	<Layout>
 		<div class="container pt-3 pb-4">
-			<div class="card shadow-sm">
-				<div class="card-body">
-					<h1 class="card-title">Impressum</h1>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing
-						elit. Error doloremque omnis animi, eligendi magni a
-						voluptatum, vitae, consequuntur rerum illum odit fugit
-						assumenda rem dolores inventore iste reprehenderit
-						maxime! Iusto.
-					</p>
-				</div>
-			</div>
+			<Card title="Impressum">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					Error doloremque omnis animi, eligendi magni a voluptatum,
+					vitae, consequuntur rerum illum odit fugit assumenda rem
+					dolores inventore iste reprehenderit maxime! Iusto.
+				</p>
+			</Card>
 		</div>
 	</Layout>
 </template>
 
 <script>
+    import Card from '../components/Card';
     export default {
+		components: { Card },
     	metaInfo: {
     		title: 'Impressum'
     	}
