@@ -19,7 +19,6 @@
 <script>
     export default {
     	mounted() {
-    		console.warn(this.$page);
     	},
     	metaInfo() {
     		return {

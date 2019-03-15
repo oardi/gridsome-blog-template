@@ -5,17 +5,17 @@
 				class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm"
 			>
 				<div class="container">
-					<g-link class="navbar-brand text-primary" to="/" exact>{{
-						$static.metaData.siteName
-					}}</g-link>
+					<g-link class="navbar-brand" to="/" exact>
+						{{ $static.metaData.siteName }}
+					</g-link>
 
 					<button
 						class="navbar-toggler btn btn-sm"
 						type="button"
 						@click="toggleCollapse()"
 					>
-						<app-fa v-if="!this.isMenuCollapsed" icon="bars" />
-						<app-fa v-if="this.isMenuCollapsed" icon="times" />
+						<FaIcon v-if="!this.isMenuCollapsed" icon="bars" />
+						<FaIcon v-if="this.isMenuCollapsed" icon="times" />
 					</button>
 					<div
 						:class="{ show: isMenuCollapsed }"
@@ -72,16 +72,10 @@
 	</div>
 </template>
 
-<static-query>
-query {
-	metaData {
-		siteName
-	}
-}
-</static-query>
-
 <script>
+    import FaIcon from '../components/Fa';
     export default {
+    	components: { FaIcon },
     	data: () => {
     		return {
     			isMenuCollapsed: false
@@ -114,7 +108,15 @@ query {
     	opacity: 0;
     }
 
-	.card {
-		border-color: white;
-	}
+    .card {
+    	border-color: white;
+    }
 </style>
+
+<static-query>
+query {
+	metaData {
+		siteName
+	}
+}
+</static-query>
