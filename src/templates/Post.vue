@@ -1,13 +1,13 @@
 <template>
 	<Layout>
 		<div class="container pt-4 pb-4">
-			<div class="card shadow">
+			<div class="card shadow-sm">
 				<div class="card-body">
 					<h1 class="card-title">{{ $page.post.title }}</h1>
 					<div class="card-text" v-html="$page.post.content" />
 				</div>
 			</div>
-			<div class="card shadow mt-4">
+			<div class="card shadow-sm mt-4">
 				<div class="card-body">
 					Author: {{ $page.post.author.name }}
 				</div>

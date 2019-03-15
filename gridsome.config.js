@@ -49,7 +49,5 @@ module.exports = {
 				route: '/author/:id'
 			}
 		}
-	],
-
-	// pathPrefix: '/gridsome-blog'
+	]
 }

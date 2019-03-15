@@ -1,7 +1,7 @@
 <template>
 	<Layout>
 		<div class="container pt-4 pb-4">
-			<div class="card shadow">
+			<div class="card shadow-sm">
 				<div class="card-body">
 					<h1 class="card-title">{{ $page.tag.title }}</h1>
 					<ul>

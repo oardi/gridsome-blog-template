@@ -2,7 +2,7 @@
 	<div class="layout d-flex flex-column h-100">
 		<header class="header">
 			<nav
-				class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow"
+				class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm"
 			>
 				<div class="container">
 					<g-link class="navbar-brand text-primary" to="/" exact>{{
@@ -102,11 +102,6 @@ query {
     body {
     	padding-top: 58px;
     	background-color: theme-color('light');
-    }
-
-    #banner {
-    	background: url(../../static/banner.jpg) center center;
-    	background-size: cover;
     }
 
     .expand-enter-active,
