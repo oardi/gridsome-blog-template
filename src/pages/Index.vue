@@ -3,7 +3,7 @@
 		<div class="container pt-4 pb-4">
 			<!-- TODO - AUTHOR -->
 			<div
-				class="d-flex align-items-center justify-content-center"
+				class="d-flex align-items-center justify-content-center text-center"
 				style="height: 380px;"
 			>
 				<div
