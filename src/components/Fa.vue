@@ -4,7 +4,8 @@
     	faHome,
     	faBars,
     	faTimes,
-    	faChevronUp
+		faChevronUp,
+		faCalendar
     } from '@fortawesome/free-solid-svg-icons';
     import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -12,6 +13,7 @@
     library.add(faBars);
     library.add(faTimes);
     library.add(faChevronUp);
+	library.add(faCalendar);
 
     export default FontAwesomeIcon;
 </script>

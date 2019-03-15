@@ -10,7 +10,7 @@
 			</div>
 
 			<div class="mt-2">
-				<Tag v-for="tag of post.tags" :key="tag.id" :tag="tag" />
+				<Tag class="mr-2" v-for="tag of post.tags" :key="tag.id" :tag="tag" />
 			</div>
 
 			<g-link class="post-card__link" :to="post.path">Link</g-link>

@@ -1,5 +1,5 @@
 module.exports = {
-	siteName: 'My Static Site',
+	siteName: 'MyStaticSite',
 	siteDescription: 'This is a website build with gridsome - a static site generator',
 
 	transformers: {

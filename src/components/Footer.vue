@@ -1,11 +1,10 @@
 <template>
 	<footer class="mt-4">
 		<div class="text-center p-2">
-			<span>
+			<div>
 				©{{ new Date().getFullYear() }} -
 				{{ $static.metaData.siteName }}
-			</span>
-			&nbsp;
+			</div>
 			<g-link class="nav-item" to="/datenschutz" exact>
 				Datenschutz
 			</g-link>

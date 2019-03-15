@@ -58,8 +58,8 @@
 </template>
 
 <script>
-	import FaIcon from '../components/Fa';
-	import Footer from '../components/Footer';
+    import FaIcon from '../components/Fa';
+    import Footer from '../components/Footer';
     export default {
     	components: { FaIcon, Footer },
     	data: () => {
@@ -96,6 +96,12 @@
 
     .card {
     	border-color: white;
+    }
+
+    @media (max-width: 480px) {
+    	.container {
+			padding: 0;
+		}
     }
 </style>
 
