@@ -2,7 +2,7 @@
 	<div class="layout d-flex flex-column h-100">
 		<header class="header">
 			<nav
-				class="navbar fixed-top navbar-expand-md navbar-light bg-light shadow-sm"
+				class="navbar fixed-top navbar-expand-md navbar-light bg-white shadow-sm"
 			>
 				<div class="container">
 					<g-link class="navbar-brand" to="/" exact>
@@ -53,29 +53,15 @@
 			</main>
 		</transition>
 
-		<footer class="mt-4">
-			<div class="text-center p-2">
-				<span>
-					©{{ new Date().getFullYear() }} -
-					{{ $static.metaData.siteName }}
-				</span>
-				&nbsp;
-				<g-link class="nav-item" to="/datenschutz" exact>
-					Datenschutz
-				</g-link>
-				&nbsp;
-				<g-link class="nav-item" to="/impressum" exact>
-					Impressum
-				</g-link>
-			</div>
-		</footer>
+		<Footer />
 	</div>
 </template>
 
 <script>
-    import FaIcon from '../components/Fa';
+	import FaIcon from '../components/Fa';
+	import Footer from '../components/Footer';
     export default {
-    	components: { FaIcon },
+    	components: { FaIcon, Footer },
     	data: () => {
     		return {
     			isMenuCollapsed: false
@@ -114,9 +100,9 @@
 </style>
 
 <static-query>
-query {
-	metaData {
-		siteName
+	query {
+		metaData {
+			siteName
+		}
 	}
-}
 </static-query>

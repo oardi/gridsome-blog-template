@@ -10,15 +10,7 @@
 			</div>
 
 			<div class="mt-2">
-				<g-link
-					v-for="tag of post.tags"
-					:key="tag.id"
-					class="btn btn-secondary btn-sm shadow-sm"
-					:to="tag.path"
-					exact
-				>
-					#{{ tag.title }}
-				</g-link>
+				<Tag v-for="tag of post.tags" :key="tag.id" :tag="tag" />
 			</div>
 
 			<g-link class="post-card__link" :to="post.path">Link</g-link>
@@ -27,8 +19,10 @@
 </template>
 
 <script>
+	import Tag from './Tag';
     export default {
-    	props: ['post']
+		props: ['post'],
+		components: { Tag }
     };
 </script>
 
