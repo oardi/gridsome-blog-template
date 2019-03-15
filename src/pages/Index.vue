@@ -53,6 +53,10 @@
 								#{{ tag.title }}
 							</g-link>
 						</div>
+
+						<g-link class="post-card__link" :to="post.path"
+							>Link</g-link
+						>
 					</div>
 				</div>
 			</div>
@@ -95,9 +99,23 @@
 </script>
 
 <style>
-    /* .posts .card:hover {
-                    	cursor: pointer;
-                    } */
+    .posts .card:hover {
+    	cursor: pointer;
+    	transform: translateY(-2px);
+    	box-shadow: 1px 10px 30px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .post-card__link {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	opacity: 0;
+    	overflow: hidden;
+    	text-indent: -9999px;
+    	z-index: 0;
+    }
 </style>
 
 <page-query>
