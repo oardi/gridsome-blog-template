@@ -77,7 +77,8 @@
 
 <style lang="scss">
     $enable-shadows: true;
-    @import '~bootstrap/scss/bootstrap';
+    @import '../assets/styles/custom-bootstrap';
+    // @import '~bootstrap/scss/bootstrap';
 
     body {
     	padding-top: 58px;
@@ -98,10 +99,31 @@
     	border-color: white;
     }
 
+    .container {
+    	.card {
+    		margin-bottom: 20px;
+
+    		h2 {
+    			font-size: 1.5rem;
+    			font-weight: 300;
+    			line-height: 1.2;
+    			margin-top: 20px;
+    		}
+    	}
+    }
+
+    .display-3 {
+    	font-size: 3.5rem;
+    }
+
+    .display-4 {
+    	font-size: 2rem;
+    }
+
     @media (max-width: 480px) {
     	.container {
-			padding: 0;
-		}
+    		padding: 0;
+    	}
     }
 </style>
 
