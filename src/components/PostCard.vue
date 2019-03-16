@@ -1,16 +1,22 @@
 <template>
 	<div class="card shadow-sm mt-4">
 		<div class="card-body">
-			<h5 class="card-title">
+			<h5 class="card-title display-4">
 				<div>{{ post.category.title }} - {{ post.title }}</div>
-				<small class="text-muted">{{ post.date }}</small>
 			</h5>
+			<small class="text-muted">{{ post.date }}</small>
+
 			<div class="card-text">
 				<p>{{ post.excerpt }}</p>
 			</div>
 
 			<div class="mt-2">
-				<Tag class="mr-2" v-for="tag of post.tags" :key="tag.id" :tag="tag" />
+				<Tag
+					class="mr-2"
+					v-for="tag of post.tags"
+					:key="tag.id"
+					:tag="tag"
+				/>
 			</div>
 
 			<g-link class="post-card__link" :to="post.path">Link</g-link>
@@ -19,10 +25,10 @@
 </template>
 
 <script>
-	import Tag from './Tag';
+    import Tag from './Tag';
     export default {
-		props: ['post'],
-		components: { Tag }
+    	props: ['post'],
+    	components: { Tag }
     };
 </script>
 
