@@ -6,7 +6,7 @@ excerpt: some short description about blaaaa
 author: ardian-shala
 timeToRead: 3000
 tags:
-  - vue
+  - angularjs
 ---
 
 
