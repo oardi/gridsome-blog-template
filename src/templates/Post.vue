@@ -64,7 +64,7 @@
 			title
 			excerpt
 			content
-			date (format:"DD.MM.YYYY")
+			date(format: "DD.MM.YYYY - HH:mm")
 			author {
 				name
 			}
