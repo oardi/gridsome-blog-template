@@ -5,7 +5,7 @@ Static Site Generator
 # SCSS aktivieren
 Abhängigkeiten installieren
 
-`npm install -D sass-loader node-sass`
+`npm install -d sass-loader node-sass`
 
 Lang SCSS im Layout anpassen:
 ```js
