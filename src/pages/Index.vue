@@ -18,11 +18,6 @@
 					</div>
 					<h1 class="display-4">{{ $page.metaData.siteName }}</h1>
 					<p>{{ $page.metaData.siteDescription }}</p>
-					<div class="text-center">
-						<button class="btn btn-primary shadow">
-							Custom Action
-						</button>
-					</div>
 				</div>
 			</div>
 

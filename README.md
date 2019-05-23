@@ -8,7 +8,8 @@
 * Sitemap
 * About, 404 Page
 * prismjs highlight
-* Bootstrap 4
+* Bootstrap4
+* FontAwesome5
 
 ## Enable SCSS
 
