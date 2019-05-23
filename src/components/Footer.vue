@@ -5,13 +5,6 @@
 				©{{ new Date().getFullYear() }} -
 				{{ $static.metaData.siteName }}
 			</div>
-			<g-link class="nav-item" to="/datenschutz" exact>
-				Datenschutz
-			</g-link>
-			&nbsp;
-			<g-link class="nav-item" to="/impressum" exact>
-				Impressum
-			</g-link>
 		</div>
 	</footer>
 </template>

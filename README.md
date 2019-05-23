@@ -1,4 +1,14 @@
-# Gridsome
+# Gridsome Blog Template
+
+## Included
+* Posts
+* Category
+* Tags
+* Author
+* Sitemap
+* About, 404 Page
+* prismjs highlight
+* Bootstrap 4
 
 ## Enable SCSS
 

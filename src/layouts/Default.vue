@@ -30,15 +30,10 @@
 							<li class="nav-item">
 								<g-link
 									class="nav-link"
-									to="/datenschutz"
+									to="/about"
 									exact
 								>
-									Datenschutz
-								</g-link>
-							</li>
-							<li class="nav-item">
-								<g-link class="nav-link" to="/impressum" exact>
-									Impressum
+									About
 								</g-link>
 							</li>
 						</ul>

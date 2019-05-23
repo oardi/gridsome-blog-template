@@ -2,7 +2,7 @@
 title: Blog Post One
 date: 2019-03-13
 category: project
-excerpt: some short description about blaaaa
+excerpt: some short description about
 author: ardian-shala
 tags:
   - vue
