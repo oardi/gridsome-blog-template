@@ -1,13 +1,13 @@
 # Gridsome
-Static Site Generator
 
+## Enable SCSS
 
-# SCSS aktivieren
-Abhängigkeiten installieren
+### Install Dependencies
 
 `npm install -d sass-loader node-sass`
 
-Lang SCSS im Layout anpassen:
+### Change "lang" attribute to SCSS
+
 ```js
 <style lang="scss">
 	@import "~bootstrap/scss/bootstrap";
@@ -16,16 +16,15 @@ Lang SCSS im Layout anpassen:
 
 
 
-# Blog erstellen
+## Create a Blog
 
 
-## Benötigte Plugins installieren
-Dafür muss folgender Befehl ausgeführt werden:
+### Install Dependencies
 
 `npm install @gridsome/source-filesystem @gridsome/transformer-remark`
 
 
-## Gridsome Config anpassen
+### Edit Gridsome Config
 
 ```js
 module.exports = {
@@ -48,19 +47,16 @@ module.exports = {
 				remark: {}
 			}
 		}
-	],
-
-	pathPrefix: '/gridsome'
+	]
 }
 ```
 
 
-## Blog Ordner erstellen
-Im Root-Verzeichnis einen Ordner "blog" erstellen.
-Innerhalb des Verzeichnis einen Unterordner "posts" erstellen.
-Innerhalb diesen Ordners können nun Blog-Posts als .md Dateien abgelegt werden.
+### Create the structure
+Create a folder called "blog" and a subfolder "posts".
+Now you can create Posts files with ".md" extension.
 
-
+Some basic markdown:
 ```
 ---
 title: Blog Post One
@@ -79,10 +75,10 @@ Content lorem ipsum **haha**
 ```
 
 
-# Gridsome Config Tags hinzufügen
+## Add Tags
 
-Damit Tags hinzugefügt werden können, muss innerhalb der Plugins die Konfiguration erweitert werden.
-Unter dem **path** kann nun das Verzeichnis für Tags erstellt werden.
+To add Tags modify the Plugins configuration.
+Add the Path for the Tags in **path**.
 
 ```js
 {
@@ -96,8 +92,8 @@ Unter dem **path** kann nun das Verzeichnis für Tags erstellt werden.
 ```
 
 
-## Gridsome Config Post anpassen
-Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Collection der Typename zugefügt: tags: 'Tag'
+### Gridsome Config Post anpassen
+Inside Post-Config add a reference: tags: 'Tag'
 
 ```js
 refs: {
@@ -105,8 +101,8 @@ refs: {
 },
 ```
 
-## Tag einem Post zuweisen
-Im Header einer Post .md Datei kann nun die Collection **tags** mit einer Liste von Tag-Ids versehen werden.
+### Attach Tags to Post file
+To show tags inside a Post .md file add a collection to **tags**.
 
 ```
 tags:
@@ -115,10 +111,9 @@ tags:
 
 
 
-# Category einem Post zuweisen
+## Category 
 
-## Gridsome Config Post anpassen
-Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Typename zugefügt: category: 'Category'
+### Edit config
 
 Post
 ```js
@@ -140,10 +135,9 @@ Plugins
 ```
 
 
-# Author einem Post zuweisen
+## Add Author to Post
 
-## Gridsome Config Post anpassen
-Innerhalb der Post-Config wird eine Referenz erweitert. Hierfür wird der Typename zugefügt: author: 'Author'
+### Gridsome Config Post anpassen
 
 Post
 ```js
@@ -165,31 +159,18 @@ Plugins
 ```
 
 
-<!-- https://gridsome.org/docs/taxonomies/#creating-a-taxonomy-page --> 
-<!-- https://github.com/gridsome/gridsome/issues/188 -->
+## Sitemap
 
-
-# TODO
-
-Components um Teile zu extrahieren
-
-
-
-# Sitemap
-
-## Plugin installieren
+### Install dependencies
 `npm install @gridsome/plugin-sitemap`
 
-## siteUrl setzen 
-siteUrl: 'gridsome.muchadev.com',
-
-## builden
-...
+### siteUrl setzen 
+siteUrl: 'YOURURL',
 
 
-# Meta Data
+## Meta Data
 
-## Post Meta Data
+### Post Meta Data
 ```js
 metaInfo() {
 	return {
